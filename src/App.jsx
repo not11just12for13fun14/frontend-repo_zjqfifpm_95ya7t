@@ -1,27 +1,31 @@
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Projects from './components/Projects';
-import ExperienceEducation from './components/ExperienceEducation';
-import DTech from './components/DTech';
-import Contact from './components/Contact';
+import Navbar from './components/Navbar.jsx';
+import Hero from './components/Hero.jsx';
+import Projects from './components/Projects.jsx';
+import Contact from './components/Contact.jsx';
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <div className="min-h-screen bg-neutral-950 text-white">
       <Navbar />
-      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="pt-6" />
+      <main>
+        <section id="home" className="relative min-h-[85vh] flex items-center">
+          <Hero />
+        </section>
+        <section id="projects" className="py-20 container mx-auto px-4">
+          <Projects />
+        </section>
+        <section id="contact" className="py-20 bg-neutral-900/40">
+          <div className="container mx-auto px-4">
+            <Contact />
+          </div>
+        </section>
       </main>
-      <div className="px-4 sm:px-6 lg:px-8">
-        <Hero />
-        <Projects />
-        <ExperienceEducation />
-        <DTech />
-        <Contact />
-      </div>
-      <footer className="border-t border-white/10 py-8 text-center text-sm text-slate-400">
-        © {new Date().getFullYear()} Your Name · Built with love, Flutter energy, and clean code
+      <footer className="border-t border-white/10">
+        <div className="container mx-auto px-4 py-6 text-sm text-white/60 flex items-center justify-between">
+          <span>© {new Date().getFullYear()} Your Name</span>
+          <a href="#home" className="hover:text-white transition">Back to top</a>
+        </div>
       </footer>
     </div>
   );
